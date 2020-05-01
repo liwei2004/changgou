@@ -95,7 +95,7 @@ public class BrandServiceImpl implements BrandService {
     }
 
     /**
-     * 条件+分页查询
+     * 条件组合+分页查询
      *
      * @param searchMap 查询条件
      * @param page      页码
