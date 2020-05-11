@@ -10,12 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.HashMap;
 import java.util.Map;
 
-@CanalEventListener
+@CanalEventListener //声明当前的类是canal的监听类
 public class SpuListener {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    /**
+     * 监听并处理
+     * @param eventType 当前操作数据库的类型
+     * @param rowData   当前操作数据库的数据
+     */
     @ListenPoint(schema = "changgou_goods",table = "tb_spu")
     public void goodsUp(CanalEntry.EventType eventType,CanalEntry.RowData rowData){
         //获取改变之前的数据并将这部分数据转换为map
