@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 @RestController
-@CrossOrigin
+@CrossOrigin  //开启跨域请求操作，前后端分离必须会出现跨域问题
 @RequestMapping("/brand")
 public class BrandController {
 

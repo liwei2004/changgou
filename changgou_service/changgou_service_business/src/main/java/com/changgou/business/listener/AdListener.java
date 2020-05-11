@@ -13,7 +13,7 @@ public class AdListener {
     public void receiveMessage(String message){
         System.out.println("接收到的消息为:"+message);
 
-        //发起远程调用
+        //发起远程调用-Nginx
         OkHttpClient okHttpClient = new OkHttpClient();
         String url = "http://192.168.200.128/ad_update?position="+message;
         Request request = new Request.Builder().url(url).build();

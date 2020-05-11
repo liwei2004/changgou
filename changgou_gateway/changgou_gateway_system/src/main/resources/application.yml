@@ -3,6 +3,7 @@ spring:
     name: sysgateway
   cloud:
     gateway:
+      # 网关解决跨域问题
       globalcors:
         cors-configurations:
           '[/**]': # 匹配所有请求
@@ -14,10 +15,13 @@ spring:
               - DELETE
       routes:
         - id: goods
+          # lb:动态路由协议   如果访问的路径中包含goods 就会去注册中心访问goods服务
           uri: lb://goods
+          # 具体访问的路径信息，访问的路径前面要加上goods
           predicates:
             - Path=/goods/**
           filters:
+            # 忽略访问路径的斜线后面的第一个值
             - StripPrefix= 1
             - name: RequestRateLimiter #请求数限流 名字不能随便写
               args:
