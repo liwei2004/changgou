@@ -2,6 +2,9 @@ package com.changgou.test;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
+/**
+ * 测试加密方法
+ */
 public class TestBcrypt {
 
     public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class TestBcrypt {
             String gensalt = BCrypt.gensalt();
             System.out.println("盐:"+gensalt);  //随机字符串，长度29
 
-            //基于当前的盐对密码进行加密
+            //加密  基于当前的盐对密码进行加密
             String saltPassword = BCrypt.hashpw("123456", gensalt);
             System.out.println("加密后的密文:"+saltPassword);
 

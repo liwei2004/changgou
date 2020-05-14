@@ -76,7 +76,7 @@ public class OrderServiceImpl implements OrderService {
      * @param order
      */
     @Override
-    @GlobalTransactional(name = "order_add")
+    @GlobalTransactional(name = "order_add")  //分布式事务控制注解，order_add：全局事务名称
     public String add(Order order){
         //1.获取购物车的相关数据(redis)
         Map cartMap = cartService.list(order.getUsername());

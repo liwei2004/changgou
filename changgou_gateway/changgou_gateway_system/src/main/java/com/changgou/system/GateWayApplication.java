@@ -17,7 +17,7 @@ public class GateWayApplication {
     }
 
     /**
-     * 基于网关限流
+     * 基于网关限流 - spring cloud gateway 默认使用redis的RateLimter限流算法来实现
      * @return
      */
     @Bean

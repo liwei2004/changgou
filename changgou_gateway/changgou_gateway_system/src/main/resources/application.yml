@@ -24,8 +24,8 @@ spring:
             # 忽略访问路径的斜线后面的第一个值
             - StripPrefix= 1
             - name: RequestRateLimiter #请求数限流 名字不能随便写
-              args:
-                key-resolver: "#{@ipKeyResolver}"
+              args: #spring cloud gateway 默认使用redis的RateLimter限流算法来实现
+                key-resolver: "#{@ipKeyResolver}"   # 用于限流的键的解析器的 Bean对象的名字。它使用 SpEL表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
                 redis-rate-limiter.replenishRate: 1 #令牌桶每秒填充平均速率（网关限流）
                 redis-rate-limiter.burstCapacity: 1 #令牌桶总容量（网关限流）
         - id: system

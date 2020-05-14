@@ -25,6 +25,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <!--redis依赖，网关限流-->
+        <!--spring cloud gateway 默认使用redis的RateLimter限流算法来实现，所以要引入redis依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
