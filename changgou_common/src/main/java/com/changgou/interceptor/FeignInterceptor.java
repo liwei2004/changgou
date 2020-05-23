@@ -10,6 +10,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 
+/**
+ * feign拦截器--微服务之间认证
+ */
 @Component
 public class FeignInterceptor implements RequestInterceptor {
     @Override

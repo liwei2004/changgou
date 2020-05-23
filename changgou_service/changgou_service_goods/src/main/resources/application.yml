@@ -39,5 +39,5 @@ hystrix:
           thread:
             # 熔断器超时时间，默认：1000/毫秒
             timeoutInMilliseconds: 20000
-workerId: 0
-datacenterId: 0
+workerId: 0 #idworker的变量
+datacenterId: 0 #idworker的变量

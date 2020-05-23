@@ -24,7 +24,7 @@ public class UserController {
      * @return
      */
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('accountant')")
+    @PreAuthorize("hasAnyAuthority('accountant')")//声明当前方法所具有的权限，或是角色信息
     public Result findAll(){
         List<User> userList = userService.findAll();
         return new Result(true, StatusCode.OK,"查询成功",userList) ;
